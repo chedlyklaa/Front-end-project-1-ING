@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestionnaire de contacts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header">
+    Le carnet d'adresses local
+  </div>
+  <div id="content">
+    <h1>GÉRER LA LISTE DE CONTACTS</h1>
+    <div id="btn-container">
+      <button id="ajouter"></button>
+      <button id="effacer"></button>
+    </div>
+    <div class="boxes">
+      <div id="contacts">
+        <h1 class="show">Contacts enregistrés</h1>
+        <div id="contactlist">
+          <p class="no-contacts" id="aucun">Aucun contact pour le moment</p>
+        </div>
+      </div>
+      <div id="contact-details"></div>
+      <div id="formulaire-contact" class="cacher">
+        
+        <form id="form-contact">
+          <fieldset>
+            <legend>Saisie/Modification d'un contact</legend>
+          <div>
+            <label for="civilite">Civilité:</label>
+            <select id="civilite" name="civilite">
+              <option value="Monsieur">Monsieur</option>
+              <option value="Madame">Madame</option>
+              <option value="Mademoiselle">Mademoiselle</option>
+            </select>
+          </div>
+          <div>
+            <label for="prenom">Prénom:</label>
+            <input type="text" id="prenom" name="prenom" required>
+          </div>
+          <div>
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" required>
+          </div>
+          <div>
+            <label for="telephone">Téléphone:</label>
+            <input type="tel" id="telephone" name="telephone">
+          </div>
+          <button type="submit">Enregistrer</button>
+          <button type="button" id="btn-annuler">Effacer</button>
+        </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+body {
+  background-image: url('back.jpg');
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+h1{color: #f0f0f0;}
+#content {
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#ajouter, #effacer {
+display: inline-block;
+padding: 10px 15px;
+background-color: #ff9800;
+color: #fff;
+border: 2px solid white;
+cursor: pointer;
+border-radius: 5px; /* Optionnel pour arrondir les coins */
+}
+ #ajouter::before {
+  content: "+"; /* Display the plus icon */
+  font-size: 28px;
+  
+   }
+  
+  #effacer::before {
+  content: "\1F5D1"; /* Display the trash bin icon */
+  font-size: 24px;
+  }
+
+.boxes{
+  display: flex;
+}
+
+#formulaire-contact {
+  background-color: rgba(	124, 144, 155, 0.7);
+  padding: 20px;
+  margin: 20px;
+  width: 700px;
+  border-radius: 5px;
+  float: right;
+  color: white;
+  text-align: left;
+}
+#form-contact legend {
+  color: white; 
+  background-color: #ff6600; 
+  padding: 5px 10px; 
+  border-radius: 5px; 
+}
+#form-contact fieldset {
+  border: 2px solid white;
+  border-radius: 10px; 
+  padding: 30px; 
+}
+
+#formulaire-contact input,
+#formulaire-contact select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  border: 1px solid #ccc; 
+  box-sizing: border-box;}
+  #formulaire-contact button{
+      background-color: #ff6600;
+      border: 1px solid white;
+      padding: 5px 15px;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      text-decoration: none;}
+#contacts {
+flex:1;
+background-color: rgba(	124, 144, 155, 0.7);
+padding: 20px;
+margin: 20px;
+border-radius: 5px;
+max-width: 40%;
+margin-left: 20px;
+overflow-y: auto;
+}
+.show{
+  font-size: large;
+  font-style: oblique;
+  color: #fff;
+}
+.no-contacts {
+  font-style: italic;
+  color: #fff;
+}
+.cacher {
+  display: none;
+}
+.contact {
+padding: 5px 10px;
+margin-bottom: 5px;
+border: 1px solid #ddd;
+border-radius: 5px;
+cursor: pointer;
+color: white;
+}
+
+/* Add this CSS */
+.contact.selected {
+  background-color: orange;
+}
+
+.contact.selected:hover {
+  background-color: darken(orange, 10%);
+}
+
+.contact.selected {
+  border: 1px solid black;
+}
+
+.contact:hover {
+  background-color: rgba(124, 144, 155, 0.9);
+  border-color: black; /* Add this line to change border color on hover */
+}
+
+.contact.selected {
+  background-color: orange;
+  border-color: black; /* Add this line to change border color when selected */
+}
+.contact-details {
+  background-color: rgba(124, 144, 155, 0.7);
+  padding: 20px;
+  margin: 20px;
+  width: 700px;
+  border-radius: 5px;
+  color: white;
+  text-align: left;
+}
+.contact-details h2{
+  padding-bottom: 20px;
+}
+.contact-details p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.contact-details strong {
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.contact-details .edit-contact {
+  padding: 10px 15px;
+  background-color: #ff9800;
+  color: #fff;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
