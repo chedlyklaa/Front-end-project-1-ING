@@ -38,9 +38,8 @@ border-radius: 5px; /* Optionnel pour arrondir les coins */
   content: "\1F5D1"; /* Display the trash bin icon */
   font-size: 24px;
   }
-
-.boxes{
-  display: flex;
+.boxes {
+  margin-top: 50px;
 }
 
 #formulaire-contact {
@@ -52,6 +51,7 @@ border-radius: 5px; /* Optionnel pour arrondir les coins */
   float: right;
   color: white;
   text-align: left;
+  margin-top:-143px;
 }
 #form-contact legend {
   color: white; 
@@ -139,6 +139,7 @@ color: white;
   border-color: black; /* Add this line to change border color when selected */
 }
 .contact-details {
+  flex:1;
   background-color: rgba(124, 144, 155, 0.7);
   padding: 20px;
   margin: 20px;
@@ -146,6 +147,8 @@ color: white;
   border-radius: 5px;
   color: white;
   text-align: left;
+  float: right;
+  margin-top:-143px;
 }
 .contact-details h2{
   padding-bottom: 20px;
