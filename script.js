@@ -1,5 +1,7 @@
 $(document).ready(function() {
+  // Déclarations
     let contacts = JSON.parse(localStorage.getItem('contacts')) || [];// Add this function to your JavaScript (in script.js)
+    // Fonctions
     function toggleSelected(index) {
         var contact = $(`.contact[data-index="${index}"]`);
         if (contact.hasClass('selected')) {
@@ -12,17 +14,23 @@ $(document).ready(function() {
         }
       }
       
-      // Call the toggleSelected function when a contact is clicked
+      // Appel de toggle
       $(document).ready(function() {
         $(document).on('click', '.contact', function() {
           var index = $(this).data('index');
           toggleSelected(index).slideDown();
         });
       });
-    
+    //show contacts 
     function displayContacts() {
       contacts.sort(function(a, b) {
-        return a.lastName.localeCompare(b.lastName) || a.firstName.localeCompare(b.firstName);
+        const nameComparison = a.firstName.localeCompare(b.firstName);
+        
+        if (nameComparison === 0) {
+          return a.phoneNumber.localeCompare(b.phoneNumber);
+        }
+        
+        return nameComparison;
       });
   
       let contactsContainer = $('#contactlist');
@@ -84,24 +92,34 @@ $(document).ready(function() {
         $('#formulaire-contact').hide();
          $('#form-contact').data('index', index);
       });
-      
+
   
+      
+  //effacer
     $('#effacer').click(function() {
       localStorage.removeItem('contacts');
       contacts = [];
       displayContacts();
     });
-  
+
+
+  //ajouter
     $('#ajouter').click(function() {
       $('#form-contact').data('index', -1);
       $('#contact-details').empty();
       $('#formulaire-contact').slideDown();
     });
   
+
+    //annulation
     $('#btn-annuler').click(function() {
       $('#form-contact')[0].reset();
       $('#formulaire-contact').slideUp();
     });
+
+
+
+
     // Fonction pour afficher les détails d'un contact
     function displayContactDetails(index) {
         let contact = contacts[index];
@@ -117,6 +135,8 @@ $(document).ready(function() {
         $('#formulaire-contact').hide();
     }
 
+
+    
 // Gérer le clic sur "Editer le contact"
 $(document).on('click', '.edit-contact', function() {
     // Clear the contact details
@@ -127,7 +147,7 @@ $(document).on('click', '.edit-contact', function() {
     console.log(index)
     let contact = contacts[index];
     $('#form-contact').data('index', index);
-    // Set the values of the form fields with the contact's information
+    //ancien valeur
     $('#civilite').val(contact.civilite);
     $('#prenom').val(contact.firstName);
     $('#nom').val(contact.lastName);
